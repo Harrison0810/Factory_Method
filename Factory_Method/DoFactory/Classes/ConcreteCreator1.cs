@@ -1,21 +1,17 @@
 ﻿namespace DoFactory
 {
-    // Concrete Creators override the factory method in order to change the
-    // resulting product's type.
+    // Concrete Creators anulan el método de fábrica para cambiar el tipo de producto resultante.
     public class ConcreteCreator1 : Creator
     {
-        // Note that the signature of the method still uses the abstract product
-        // type, even though the concrete product is actually returned from the
-        // method. This way the Creator can stay independent of concrete product
-        // classes.
+        // Tenga en cuenta que la firma del método todavía usa el tipo de producto abstracto, 
+        // aunque el producto concrete realmente se devuelve del método.
         public override IProduct FactoryMethod()
         {
             return new ConcreteProduct1();
         }
     }
 
-    // Concrete Products provide various implementations of the Product
-    // interface.
+    // Los productos concrete proporcionan diversas implementaciones de la interfaz del producto
     public class ConcreteProduct1 : IProduct
     {
         public string Operation()
